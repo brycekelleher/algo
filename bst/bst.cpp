@@ -53,8 +53,7 @@ void bst_insert(node_t *n, unsigned int value)
 		else
 			bst_insert(n->children[0], value);
 	}
-
-	if (value > n->value)
+	else
 	{
 	       if (!n->children[1])
 			n->children[1] = bst_alloc_node(n, value);
@@ -81,6 +80,7 @@ node_t *bst_find_minimum(node_t *n)
 	return n;
 }
 
+#if 0
 void bst_successor(node_t *n)
 {
 	if (n->children[1])
@@ -90,6 +90,7 @@ void bst_successor(node_t *n)
 		// go up one level and run bst_find_minimum on that subtree
 		// what if the parent doesn't have a right subtree?
 }
+#endif
 
 void read_file(const char *filename)
 {
